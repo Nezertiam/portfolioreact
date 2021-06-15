@@ -6,6 +6,7 @@ const Navbar = () => {
             <StyledBurger className="burger" id="burger">
                 <i className="burger__icon fas fa-bars fa-2x" id="burgericon"></i>
             </StyledBurger>
+            <StyledOverlay id="navOverlay"/>
             <StyledNav className="nav" id="main-nav">
                 <div className="nav__logo">
                     <a href="#" className="nav__link">Mawyn Nhek</a>
@@ -40,7 +41,22 @@ const StyledA = styled.a`
     }
 `
 
-const Overlay = styled.div`
+const StyledOverlay = styled.div`
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    background: none;
+    display: none;
+
+    &.open{
+        width: 100vw;
+        height: 100vh;
+        display: block;
+    }
+
     @media (min-width: 992px){
         display: none;
     }
@@ -140,14 +156,23 @@ const StyledNav = styled.nav`
     }
 `
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", () => {
     let burger = document.querySelector("#burger")
     let burgericon = document.querySelector("#burgericon")
     let nav = document.querySelector("#main-nav")
+    let navOverlay = document.querySelector("#navOverlay")
     
+    navOverlay.addEventListener("click", () => {
+        nav.classList.remove("open")
+        navOverlay.classList.remove("open")
+        burgericon.classList.remove("fa-bars")
+        burgericon.classList.remove("fa-times")
+        burgericon.classList.add("fa-bars")
+    })
     
     burger.addEventListener("click", () => {
         nav.classList.toggle("open")
+        navOverlay.classList.toggle("open")
         burgericon.classList.toggle("fa-bars")
         burgericon.classList.toggle("fa-times")
     })
