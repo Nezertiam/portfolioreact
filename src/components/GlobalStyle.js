@@ -64,17 +64,17 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @media (min-width: 992px){
-        .hero, .coloredSection, .skills, .contact{
+        .hero, .coloredSection, .skills, .contact, .footer{
             grid-column: 1/13;
         }
     }
     @media (min-width: 768px) and (max-width: 991px){
-        .hero, .coloredSection, .skills, .contact{
+        .hero, .coloredSection, .skills, .contact, .footer{
             grid-column: 1/7;
         }
     }
     @media (max-width: 767px){
-        .hero, .coloredSection, .skills, .contact{
+        .hero, .coloredSection, .skills, .contact, .footer{
             grid-column: 1/4;
         }
     }
