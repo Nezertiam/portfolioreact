@@ -1,4 +1,4 @@
-import {Description, Outro, Hero, Portfolio, Skills, Contact} from '../components/index'
+import {Description, Hero, Portfolio, Skills, Contact} from '../components/index'
 
 
 const Intro = ({ datas }) => {
@@ -9,8 +9,7 @@ const Intro = ({ datas }) => {
             <Description content={ datas.coloredSections.description }/>
             <Skills content={ datas.skills }/>
             <Portfolio />
-            <Outro content={ datas.coloredSections.outro }/>
-            <Contact content={ datas.contacts }/>
+            <Contact cards={ datas.contacts } outro={ datas.coloredSections.outro }/>
         </>
     )
 }
