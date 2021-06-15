@@ -10,7 +10,7 @@ const Navbar = () => {
                 <div className="nav__logo">
                     <a href="#" className="nav__link">Mawyn Nhek</a>
                 </div>
-
+                <StyledHr />
                 <ol className="nav__list">
                     <li className="nav__item">
                         <a href="#" className="nav__link nav__link--active">Compétences</a>
@@ -28,12 +28,22 @@ const Navbar = () => {
 }
 
 const StyledA = styled.a`
-    border: 2px solid white;
-    border-radius: 20px;
-    padding: 0.5rem 2rem;
 
-    &:hover{
-        background-color: var(--clr-primary);
+    @media (min-width: 992px){
+        border: 2px solid white;
+        border-radius: 20px;
+        padding: 0.5rem 2rem;
+    
+        &:hover{
+            background-color: var(--clr-primary);
+        }
+    }
+`
+
+const StyledHr = styled.hr`
+
+    @media (min-width: 992px){
+        display: none;
     }
 `
 
@@ -58,10 +68,10 @@ const StyledBurger = styled.div`
 
 const StyledNav = styled.nav`
     position: fixed;
-    background-color: var(--clr-primary-dark);
     height: 100vh;
     width: 80vw;
-    padding-top: 6rem;
+    padding: 3rem 0;
+    background-color: var(--clr-bg-primary-light);
     opacity: 97%;
     left: -100%;
     transition: left 0.75s;
@@ -78,7 +88,12 @@ const StyledNav = styled.nav`
             font-weight: bolder;
             display: block;
             text-align: center;
-            height: 15vh;
+        }
+        &__item{
+            padding: 3rem 0;
+        }
+        &__logo{
+            padding: 3rem 0;
         }
     }
 
@@ -89,12 +104,12 @@ const StyledNav = styled.nav`
         justify-content: space-between;
         opacity: 1;
         height: unset;
-        padding-top: 0;
+        padding: 0;
         background-color: transparent;
         transition: background-color 0.5s, box-shadow 0.5s;
 
         &.scrolled{
-            background-color: var(--clr-primary-dark);
+            background-color: var(--clr-bg-primary-light);
             box-shadow: -0px 0px 30px black;
         }
 
@@ -103,6 +118,8 @@ const StyledNav = styled.nav`
                 padding: 1.5rem 3rem;
             }
             &__item{
+                padding-top: 0;
+                padding-bottom: 0;
                 list-style: none;
                 display: inline;
                 &:not(:last-child){

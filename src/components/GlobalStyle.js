@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
         --clr-secondary-dark: #006496;
     
         --clr-bg-primary: #343330;
+        --clr-bg-primary-light: #63615b;
         --clr-bg-primary-font-color: #d6d6d6;
         --clr-bg-secondary: var(--clr-primary);
         --clr-bg-secondary-dark: var(--clr-primary-dark);

@@ -75,7 +75,7 @@ function data() {
                                 label: "PHP 7 / 8",
                             },
                             {
-                                icon: "fab fa-css3",
+                                icon: "fab fa-symfony",
                                 label: "Symfony 5"
                             },
                             {
@@ -141,11 +141,17 @@ function data() {
         coloredSections: {
             description: {
                 title: "Bonjour !<br/>Moi c'est Mawyn, enchanté&nbsp;!",
-                content: "Passionné par le monde de la programmation depuis tout petit, je me suis tourné vers les formations de développement et plus particulièrement dans la formation Développeur Web et Web Mobile chez <a className='coloredSection__link' target='_blank' href='https://www.elan-formation.eu/'>Elan Formation</a>."
+                content: {
+                    text: "Passionné par le monde de la programmation depuis tout petit, je me suis tourné vers les formations de développement et plus particulièrement dans la formation Développeur Web et Web Mobile chez ",
+                    url: "https://www.elan-formation.eu/",
+                    label: "Elan Formation"
+                }
             },
             outro: {
                 title: "Besoin de me contacter ?",
-                content: "Je suis joignable par mail, ou via les réseaux GitHub et LinkedIn."
+                content: {
+                    text: "Je suis joignable par mail, ou via les réseaux GitHub et LinkedIn."
+                }
             }
         }
 
