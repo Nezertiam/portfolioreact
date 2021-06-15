@@ -7,8 +7,8 @@ const Skills = ({ content }) => {
         <section className="skills">
             <CardsContainer className="cards-container">
 
-                { content.map(skill => {
-                    return <Card content={ skill } />
+                { content.map( ( skill ) => {
+                    return <Card content={ skill } key={ skill.key } />
                 })}
                 
 

@@ -6,7 +6,7 @@ import data from "./datas/data"
 
 function App() {
 
-  const [datas, setDatas] = useState(data())
+  const [datas] = useState(data())
 
   return (
     <>

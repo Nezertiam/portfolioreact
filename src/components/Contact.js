@@ -8,8 +8,8 @@ const Contact = ({ content }) => {
         <SectionStyled className="contact">
             <CardsContainer className="cards-container">
 
-                { content.map( contact => {
-                    return <Card content={ contact } />
+                { content.map( ( contact ) => {
+                    return <Card content={ contact } key={ contact.key } />
                 })}
 
             </CardsContainer>

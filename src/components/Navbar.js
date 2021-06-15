@@ -40,6 +40,12 @@ const StyledA = styled.a`
     }
 `
 
+const Overlay = styled.div`
+    @media (min-width: 992px){
+        display: none;
+    }
+`
+
 const StyledHr = styled.hr`
 
     @media (min-width: 992px){

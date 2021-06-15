@@ -11,9 +11,9 @@ const List = ({list}) => {
                 </li>
             }
             
-            {list.items.map(item => {
+            {list.items.map( ( item ) => {
                 return (
-                    <li className="list__item">
+                    <li className="list__item" key={ item.key }>
                         <i className={`list__icon ${item.icon}`}></i>{item.label}
                     </li>
                 )

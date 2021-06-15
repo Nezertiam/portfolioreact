@@ -1,9 +1,7 @@
 import List from './List'
 import styled from "styled-components"
 
-const Card = ({content}) => {
-
-    console.log(content.links)
+const Card = ({ content }) => {
     
     return (
 
@@ -33,9 +31,9 @@ const Card = ({content}) => {
 
                 {
                     content.lists && 
-                    content.lists.map(list => {
+                    content.lists.map( ( list ) => {
                         return(
-                            <List list={list} />
+                            <List list={ list } key={ list.key } />
                         )
                     })
                 }
@@ -43,9 +41,9 @@ const Card = ({content}) => {
                 {
                     content.links &&
                     <p className="card__links">
-                        {content.links.map(link => {
+                        {content.links.map( ( link ) => {
                             return(
-                                <a href={link.href} className="card__link">
+                                <a href={link.href} className="card__link" key={ link.key }>
                                     {
                                         link.icon &&
                                         <i className={`${link.icon} fa-2x`}></i>

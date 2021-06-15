@@ -59,7 +59,7 @@ function data() {
                         ]
                     },
                 ],
-                id: uuidv4(),
+                key: uuidv4(),
             },
             {
                 icon: "fas fa-code",
@@ -107,7 +107,7 @@ function data() {
                         ]
                     },
                 ],
-            id: uuidv4(),
+            key: uuidv4(),
             },
         ],
 
@@ -118,9 +118,11 @@ function data() {
                 links: [
                     {
                         href: "mailto:mawyn.nhek@gmail.com",
-                        label: "mawyn.nhek@gmail.com"
+                        label: "mawyn.nhek@gmail.com",
+                        key: uuidv4(),
                     }
-                ]
+                ],
+                key: uuidv4(),
             },
             {
                 icon: "fas fa-mobile-alt",
@@ -128,13 +130,16 @@ function data() {
                 links: [
                     {
                         href: "https://github.com/Nezertiam",
-                        icon: "fab fa-github"
+                        icon: "fab fa-github",
+                        key: uuidv4(),
                     },
                     {
                         href: "https://www.linkedin.com/in/mawyn-nhek-131bb7206/",
-                        icon: "fab fa-linkedin"
+                        icon: "fab fa-linkedin",
+                        key: uuidv4(),
                     },
-                ]
+                ],
+                key: uuidv4(),
             }
         ],
 
