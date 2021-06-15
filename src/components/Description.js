@@ -1,13 +1,9 @@
-import React, { useState } from 'react'
-import data from '../datas/data'
 import ColoredSection from './ColoredSection'
 
-const Description = () => {
-
-    const [desc, setDesc] = useState(data().coloredSections.description)
+const Description = ({ content }) => {
 
     return (
-        <ColoredSection content={desc} />
+        <ColoredSection content={ content } />
     )
 }
 

@@ -1,16 +1,16 @@
-
 import {Description, Outro, Hero, Portfolio, Skills, Contact} from '../components/index'
 
 
-const Intro = () => {
+const Intro = ({ datas }) => {
+
     return (
         <>
             <Hero />
-            <Description />
-            <Skills />
+            <Description content={ datas.coloredSections.description }/>
+            <Skills content={ datas.skills }/>
             <Portfolio />
-            <Outro />
-            <Contact />
+            <Outro content={ datas.coloredSections.outro }/>
+            <Contact content={ datas.contacts }/>
         </>
     )
 }

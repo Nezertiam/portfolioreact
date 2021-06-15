@@ -4,12 +4,25 @@ function ColoredSection({content}){
 
     return(
         <StyledSection className="coloredSection">
-            <div className="coloredSection__header">
-                <h1 className="coloredSection__title" dangerouslySetInnerHTML={{__html: content.title}}/>
-            </div>
-            <div className="coloredSection__body">
-                <p className="coloredSection__content" dangerouslySetInnerHTML={{__html: content.content}} />
-            </div>
+            {
+                content.title &&
+                <div className="coloredSection__header">
+                    <h1 className="coloredSection__title" dangerouslySetInnerHTML={{ __html: content.title }}/>
+                </div>
+            }
+
+            {
+                content.content &&
+                <div className="coloredSection__body">
+                    <p className="coloredSection__content">
+                        { content.content.text && content.content.text }
+                        {
+                            content.content.url &&
+                            <a href={ content.content.url }>{ content.content.label && content.content.label }</a>
+                        }
+                    </p>
+                </div>
+            }
         </StyledSection>
     )
 

@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 import CardsContainer from './styledComponents/CardsContainer'
 import Card from "./Card"
-import data from "../datas/data.js"
-import { useState } from 'react'
 
-const Contact = () => {
-
-    const [contacts, setContacts] = useState(data().contacts)
+const Contact = ({ content }) => {
 
     return (
         <SectionStyled className="contact">
             <CardsContainer className="cards-container">
 
-                {contacts.map(contact => {
-                    return <Card content={contact} />
+                { content.map( contact => {
+                    return <Card content={ contact } />
                 })}
 
             </CardsContainer>
