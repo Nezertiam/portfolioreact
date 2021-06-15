@@ -3,6 +3,7 @@ import GlobalStyle from "./components/GlobalStyle"
 import Navbar from "./components/Navbar";
 import Intro from "./pages/Intro";
 import data from "./datas/data"
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <GlobalStyle />
       <Navbar />
       <Intro datas={ datas }/>
+      <Footer />
     </>
   );
 }
