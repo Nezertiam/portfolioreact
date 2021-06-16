@@ -31,6 +31,7 @@ const Contact = ({ cards, outro }) => {
 }
 
 const StyledSection = styled(StyledSectionOrange)`
+    margin-bottom: 0;
     .contact{
         &__title, &__content{
             text-align: center;
@@ -47,6 +48,8 @@ const StyledSection = styled(StyledSectionOrange)`
     }
     &:after{
         z-index: -1;
+        position: unset;
+        height: 2rem;
     }
 `
 

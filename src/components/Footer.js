@@ -12,6 +12,7 @@ const Footer = () => {
 
 const StyledFooter = styled.footer`
     text-align: center;
+    //background-color: var(--clr-bg-primary);
     
     & .copy{
         padding: 2rem 0 1.5rem;
