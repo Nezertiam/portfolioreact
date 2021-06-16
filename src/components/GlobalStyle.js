@@ -1,8 +1,8 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     
-    html{
+    :root{
         // Couleurs
         --clr-primary: #f79424;
         --clr-primary-light: #ffb703;
@@ -43,19 +43,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
-    #root{
-        display: grid;
-        @media (min-width: 992px){
-            grid-template-columns: repeat(12, 1fr);
-        }
-        @media (min-width: 768px) and (max-width: 991px){
-            grid-template-columns: repeat(6, 1fr);
-        }
-        @media (max-width: 767px){
-            grid-template-columns: repeat(3, 1fr);
-        }
-        background-color: var(--clr-bg-primary);
-    }
 
 
     .skills, .contact{
@@ -63,22 +50,31 @@ const GlobalStyle = createGlobalStyle`
         padding-bottom: 10rem;
     }
 
-    @media (min-width: 992px){
-        .hero, .coloredSection, .skills, .contact, .footer{
+    .hero, .coloredSection, .skills, .contact, .footer{
+        grid-column: 1/4;
+        @media (min-width: 768px){
+            grid-column: 1/7;
+        }
+        @media (min-width: 992px){
             grid-column: 1/13;
         }
     }
-    @media (min-width: 768px) and (max-width: 991px){
-        .hero, .coloredSection, .skills, .contact, .footer{
-            grid-column: 1/7;
+
+
+    body{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background-color: var(--clr-bg-primary);
+
+        @media (min-width: 768px){
+           grid-template-columns: repeat(6, 1fr);
         }
-    }
-    @media (max-width: 767px){
-        .hero, .coloredSection, .skills, .contact, .footer{
-            grid-column: 1/4;
+        @media (min-width: 992px){
+            grid-template-columns: repeat(12, 1fr);
         }
     }
 
-`
 
-export default GlobalStyle
+`;
+
+export default GlobalStyle;
