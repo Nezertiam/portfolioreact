@@ -52,8 +52,11 @@ const StyledSection = styled(StyledSectionOrange)`
             background-color: lightsteelblue;
         }
         &__figure{
-            height: 300px;
+            height: 200px;
             margin-bottom: 2rem;
+            @media screen and (min-width: 350px){
+                height: 300px;
+            }
         }
         &__title{
             font-size: 1.75rem;
