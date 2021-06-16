@@ -1,16 +1,10 @@
 import List from './List'
 import styled from "styled-components"
-import Cards from './Cards'
 
 const Card = ({ content }) => {
 
     return (
         <>
-            {
-                content.length &&
-                <Cards content={ content } />
-            }
-
             {
                 !content.length &&
                 <StyledCard className="card">
@@ -73,61 +67,6 @@ const Card = ({ content }) => {
     )
 }
 
-const CardsContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 1rem;
-
-    @media (min-width: 635px){
-        grid-template-columns: repeat(2, 1fr);
-        &>.card{
-            border-radius: 0px 0px 0px 0px;
-            grid-column: 1/2;
-
-            &:first-child{
-                border-radius: 20px 0px 0px 0px;
-                &:last-child{
-                    border-radius: 20px;
-                }
-                &:nth-last-child(2){
-                    border-radius: 20px 0px 0px 20px;
-                }
-            }
-            &:last-child{
-                grid-column: 1/3;
-                border-radius: 0px 0px 20px 20px;
-            }
-            &:nth-child(2n){
-                grid-column: 2/3;
-                &:last-child{
-                    border-radius: 0px 0px 20px 0px;
-                }
-                &:nth-child(2){
-                    border-radius: 0px 20px 0px 0px;
-                    &:last-child{
-                        border-radius: 0px 20px 20px 0px;
-                    }
-                }
-            }
-        }
-    }
-
-    @media (max-width: 634px){
-        &>.card{
-            &:first-child{
-                border-radius: 10px 10px 0 0;
-            }
-            &:last-child{
-                border-radius: 0 0 10px 10px;
-            }
-            &:first-child:last-child{
-                border-radius: 10px;
-            }
-        }
-    }
-`
 
 const StyledCard = styled.div`
     border: 1px solid rgb(206, 206, 206);
