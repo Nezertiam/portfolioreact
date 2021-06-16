@@ -130,6 +130,10 @@ const StyledUnjoinedContainer = styled.div`
     margin: 0 auto;
     padding: 1rem 1rem;
     
+    &>*:not(:last-child){
+        margin-bottom: 1rem;
+    }
+
     @media (min-width: 635px){
 
         grid-template-columns: repeat(2, 1fr);
