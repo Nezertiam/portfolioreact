@@ -31,26 +31,19 @@ const GlobalStyle = createGlobalStyle`
         --m: 768px;
         --l: 992px;
         --xl: 1200px;
-        --xxl: 1400px;
-
-        scroll-behavior: smooth;
+        --xxl: 1400px
     }
 
 
     *{
+        scroll-behavior: smooth;
         font-family: var(--font-primary);
         box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
 
-
-    .skills, .contact{
-        z-index: 1;
-        padding-bottom: 10rem;
-    }
-
-    .hero, .coloredSection, .skills, .contact, .footer{
+    .hero, .description, .skills, .contact, .footer{
         grid-column: 1/4;
         @media (min-width: 768px){
             grid-column: 1/7;
