@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import StyledSectionOrange from "./StyledSectionOrange"
 import axios from "axios"
+import avatar from "../img/mimi.png"
 
 const Description = ({ content }) => {
 
-    const [githubUser, setGithubUser] = useState([])
+    const [githubUser, setGithubUser] = useState({data: { avatar_url: avatar }})
 
     useEffect(() => {
         axios.get("https://api.github.com/users/nezertiam").then((response) => {
