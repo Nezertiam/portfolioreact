@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
     
-    html{
+    :root{
         // Couleurs
         --clr-primary: #f79424;
         --clr-primary-light: #ffb703;
