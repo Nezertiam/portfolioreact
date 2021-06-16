@@ -148,6 +148,10 @@ const StyledUnjoinedContainer = styled.div`
                 margin-right: 0;
                 margin-left: 0.5rem;
             }
+
+            &:not(:last-child){
+                margin-bottom: 0;
+            }
         }
     }
 `
