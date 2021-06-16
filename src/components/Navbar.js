@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
     return (
@@ -9,10 +10,13 @@ const Navbar = () => {
             <StyledOverlay id="navOverlay"/>
             <StyledNav className="nav" id="main-nav">
                 <div className="nav__logo">
-                    <a href="#" className="nav__link">Mawyn Nhek</a>
+                    <Link to="/" className="nav__link">Mawyn Nhek</Link>
                 </div>
                 <StyledHr />
                 <ol className="nav__list">
+                    <li className="nav__item">
+                        <Link to="/tuto" className="nav__link">Clique ICI !!</Link>
+                    </li>
                     <li className="nav__item">
                         <a href="#" className="nav__link nav__link--active">Compétences</a>
                     </li>
