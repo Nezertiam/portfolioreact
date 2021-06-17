@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const Navbar = () => {
     return (
-        <>
+        <header>
             <StyledBurger className="burger" id="burger">
                 <i className="burger__icon fas fa-bars fa-2x" id="burgericon"></i>
             </StyledBurger>
@@ -28,7 +28,7 @@ const Navbar = () => {
                     </li>
                 </ol>
             </StyledNav>
-        </>
+        </header>
     )
 }
 

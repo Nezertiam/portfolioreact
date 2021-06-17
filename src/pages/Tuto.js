@@ -1,14 +1,14 @@
 import TutoComponent from '../components/TutoComponent'
 
 // Animations
-import { motion } from "framer-motion"
-import { pageAnimation } from "../animation"
+import { pageAnimation } from "../animations"
+import StyledMotionGrid from './StyledMotionGrid'
 
 const Tuto = () => {
     return (
-        <motion.div>
+        <StyledMotionGrid variants={ pageAnimation } initial="hidden" animate="show" exit="exit">
             <TutoComponent/>
-        </motion.div>
+        </StyledMotionGrid>
     )
 }
 

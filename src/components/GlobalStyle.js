@@ -43,16 +43,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
 
-    .hero, .description, .skills, .contact, .footer{
-        grid-column: 1/4;
-        @media (min-width: 768px){
-            grid-column: 1/7;
-        }
-        @media (min-width: 992px){
-            grid-column: 1/13;
-        }
-    }
-
 
     body{
         display: grid;
