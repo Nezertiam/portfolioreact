@@ -1,18 +1,29 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion";
+import { heroTitleAnimation } from "../animations"
 
 const Hero = () => {
 
     return (
         <HeroStyled className="hero">
-            <h1 className="hero__title">
-                Développeur Web Junior
-            </h1>
-            <p className="hero__content">
-                Je code en Front, je code en Back,<br/>et j'aime ça !
-            </p>
+            <Hide>
+                <motion.h1 variants={ heroTitleAnimation } className="hero__title">
+                    Développeur Web Junior
+                </motion.h1>
+            </Hide>
+            <Hide>
+                <motion.p variants={ heroTitleAnimation } className="hero__content">
+                    Je code en Front, je code en Back,<br/>et j'aime ça !
+                </motion.p>
+            </Hide>
         </HeroStyled>
     )
 }
+
+const Hide = styled.div`
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+`
 
 
 const HeroStyled = styled.header`
@@ -32,8 +43,8 @@ const HeroStyled = styled.header`
         &__title{
             font-family: var(--font-secondary);
             font-size: var(--h1-size);
-            margin-bottom: 1.5rem;
             color: var(--clr-primary);
+            overflow: hidden;
         }
     }
 

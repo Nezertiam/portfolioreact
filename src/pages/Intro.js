@@ -18,7 +18,7 @@ const Intro = ({ datas }) => {
 }
 
 const StyledIntro = styled(StyledMotionGrid)`
-    .hero, .description, .skills, .contact, .footer{
+    &>*{
         grid-column: 1/-1;
     }
 `

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Intro from "./pages/Intro"
 import data from "./datas/data"
 import Footer from "./components/Footer"
+import ScrollToTop from "./components/ScrollToTop"
 import Tuto from "./pages/Tuto"
 import { Route, Switch, useLocation } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
@@ -20,9 +21,11 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Switch location={ location } key={ location.pathname }>
           <Route exact path="/">
+            <ScrollToTop />
             <Intro datas={ datas }/>
           </Route>
           <Route path="/tuto">
+            <ScrollToTop />
             <Tuto />
           </Route>
         </Switch>
