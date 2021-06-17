@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
 
 
     *{
-        scroll-behavior: smooth;
+        //scroll-behavior: smooth;
         font-family: var(--font-primary);
         box-sizing: border-box;
         margin: 0;
@@ -54,6 +54,9 @@ const GlobalStyle = createGlobalStyle`
         }
         @media (min-width: 992px){
             grid-template-columns: repeat(12, 1fr);
+        }
+        &>*{
+            grid-column: 1/-1;
         }
     }
 
