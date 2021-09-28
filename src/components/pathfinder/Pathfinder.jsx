@@ -1,5 +1,7 @@
 export default class Pathfinder {
 
+    static routes = ["home", "works", "about", "contact"];
+
     static findPathByNum = (num) => {
         switch (num) {
             case 1:

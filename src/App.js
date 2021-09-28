@@ -10,7 +10,6 @@ import Pathfinder from "./components/pathfinder/Pathfinder";
 function App() {
 
   const [path, setPath] = useState(window.location.pathname);
-  const routes = ["home", "works", "about", "contact"];
 
   let num = Pathfinder.findNumByPath(path);
   console.log(num)
@@ -20,7 +19,7 @@ function App() {
     const handleWheel = (event) => {
       window.removeEventListener("wheel", handleWheel);
       if (event.deltaY > 0) {
-        if (num < routes.length - 1) {
+        if (num < Pathfinder.routes.length - 1) {
           num++;
           setPath(Pathfinder.findPathByNum(num));
         } else {
