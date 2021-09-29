@@ -54,7 +54,7 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     padding: 1.5rem;
-    z-index: 5;
+    z-index: 10;
     left: 0;
     right: 0;
 `
