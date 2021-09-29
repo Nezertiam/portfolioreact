@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Redirect, Route, Switch } from "react-router";
+import { Redirect, Route, Switch, useLocation } from "react-router";
 import styled from "styled-components";
 import AboutSection from "./components/home/AboutSection";
 import ContactSection from "./components/home/ContactSection";
@@ -7,6 +7,7 @@ import HomeSection from "./components/home/HomeSection";
 import WorkSection from "./components/home/WorkSection";
 import Navbar from "./components/navbar/Navbar";
 import Pathfinder from "./components/pathfinder/Pathfinder";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
 
@@ -61,8 +62,8 @@ function App() {
     changePage("next");
   }
 
-  window.addEventListener("wheel", handleWheel);
-
+  // window.addEventListener("wheel", handleWheel);
+  const location = useLocation();
 
   return (
     <>
@@ -75,21 +76,23 @@ function App() {
       {/* Redirect if the asked page is different from the one on screen */}
       {path !== window.location.pathname && <Redirect to={path} />}
 
-      <Switch>
-        <Route exact path="/">
-          <HomeSection />
-        </Route>
-        <Route exact path="/works">
-          <WorkSection />
-        </Route>
-        <Route exact path="/about">
-          <AboutSection />
-        </Route>
-        <Route exact path="/contact">
-          <ContactSection />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route exact path="/home">
+            <HomeSection />
+          </Route>
+          <Route exact path="/works">
+            <WorkSection />
+          </Route>
+          <Route exact path="/about">
+            <AboutSection />
+          </Route>
+          <Route exact path="/contact">
+            <ContactSection />
+          </Route>
+          <Redirect to="/home" />
+        </Switch>
+      </AnimatePresence>
 
       <StyledFooter>
         <div id="page1" className={num === 0 ? "active" : ""}></div>

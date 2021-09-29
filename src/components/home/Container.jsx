@@ -15,6 +15,7 @@ const StyledContainer = styled.main`
     width: 100vw;
     padding: 0.75rem;
     padding-top: 69px;
+    padding-bottom: 50px;
 `
 
 export default Container

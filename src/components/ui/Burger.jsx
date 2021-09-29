@@ -28,11 +28,13 @@ const StyledBurger = styled.div`
     .burger-top {
         &.open {
             transform: rotate(40deg);
+            background-color: orange;
         }
     }
     .burger-bottom {
         &.open {
             transform: rotate(-40deg);
+            background-color: orange;
         }
     }
 `
