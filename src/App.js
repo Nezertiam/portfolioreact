@@ -110,6 +110,10 @@ const Previous = styled.i`
   display: flex;
   align-items: center;
   padding: 10px;
+  @media screen and (min-width: 480px) {
+    padding: 2rem;
+    font-size: 2rem;
+  }
   `
 const Next = styled.i`
   position: fixed;
@@ -120,6 +124,10 @@ const Next = styled.i`
   display: flex;
   align-items: center;
   padding: 10px;
+  @media screen and (min-width: 480px) {
+    padding: 2rem;
+    font-size: 2rem;
+  }
 `
 
 const StyledFooter = styled.footer`
