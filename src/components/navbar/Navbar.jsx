@@ -13,32 +13,32 @@ const Navbar = () => {
 
     return (
         <>
-            <header>
+            <Header>
                 <StyledNav>
-                    <Link to="/">Mawyn Nhek</Link>
+                    <Link to="/home" className="link-to-home">Mawyn Nhek</Link>
                     <Burger open={open} onClick={handleClick} />
                 </StyledNav>
-            </header>
+            </Header>
 
             {
                 open &&
                 <StyledMenu id="menu">
                     <ul>
                         <li>
-                            <Link to="/">Accueil</Link>
+                            <Link to="/" onClick={handleClick}>Home</Link>
                         </li>
                         <li>
-                            <Link to="/works">Réalisations</Link>
+                            <Link to="/works" onClick={handleClick}>Works</Link>
                         </li>
                         <li>
-                            <Link to="/about">A propos</Link>
+                            <Link to="/about" onClick={handleClick}>About</Link>
                         </li>
                         <li>
-                            <Link to="/contact">Contact</Link>
+                            <Link to="/contact" onClick={handleClick}>Contact</Link>
                         </li>
                         <li className="networks">
-                            <Link to="/"><i className="fab fa-linkedin"></i></Link>
-                            <Link to="/"><i className="fab fa-github-square"></i></Link>
+                            <a href="https://www.linkedin.com/in/mawyn-nhek-131bb7206/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin" onClick={handleClick}></i></a>
+                            <a href="https://github.com/Nezertiam" target="_blank" rel="noreferrer"><i className="fab fa-github-square" onClick={handleClick}></i></a>
                         </li>
                     </ul>
                 </StyledMenu>
@@ -47,7 +47,12 @@ const Navbar = () => {
     )
 }
 
-
+const Header = styled.header`
+    .link-to-home {
+        letter-spacing: 0.2rem;
+        font-weight: 600;
+    }
+`
 
 const StyledNav = styled.nav`
     position: fixed;

@@ -13,6 +13,7 @@ function App() {
 
   const [path, setPath] = useState(window.location.pathname);
   const [tabCount] = useState(Pathfinder.routes.length);
+  const [doRedirect, setRedirect] = useState(false);
 
   let num = Pathfinder.findNumByPath(path);
 
@@ -21,8 +22,8 @@ function App() {
       if (num < Pathfinder.routes.length - 1) {
         num++;
         setPath(Pathfinder.findPathByNum(num));
+        setRedirect(true);
       } else {
-        window.addEventListener("wheel", handleWheel);
         document.addEventListener("DOMContentLoaded", () => {
           document.querySelector("#previous-page").addEventListener("click", handleClickPrevious);
           document.querySelector("#next-page").addEventListener("click", handleClickNext);
@@ -32,53 +33,46 @@ function App() {
       if (num !== 0) {
         num--;
         setPath(Pathfinder.findPathByNum(num));
+        setRedirect(true);
       } else {
-        window.addEventListener("wheel", handleWheel);
         document.addEventListener("DOMContentLoaded", () => {
           document.querySelector("#previous-page").addEventListener("click", handleClickPrevious);
           document.querySelector("#next-page").addEventListener("click", handleClickNext);
         })
       }
+    } else if (action === "setPageByPath") {
+      let pageNum = Pathfinder.findNumByPath();
+      num = pageNum;
     }
   }
 
-  const handleWheel = (event) => {
-    window.removeEventListener("wheel", handleWheel);
-    if (event.deltaY > 0) {
-      changePage("next");
-    }
-    if (event.deltaY < 0) {
-      changePage("previous");
-    }
-  }
   const handleClickPrevious = (event) => {
-    console.log("okay")
     document.querySelector("#previous-page").removeEventListener("click", handleClickPrevious);
     changePage("previous");
   }
   const handleClickNext = (event) => {
-    console.log("okay")
     document.querySelector("#next-page").removeEventListener("click", handleClickNext);
     changePage("next");
   }
 
   // window.addEventListener("wheel", handleWheel);
   const location = useLocation();
+  changePage("setPageByPath");
 
   return (
     <>
       <Navbar />
 
       {/* Navigation Buttons */}
-      {num !== 0 && <Previous id="previous-page" className="fas fa-chevron-left" onClick={handleClickPrevious}></Previous>}
-      {num !== tabCount - 1 && <Next id="next-page" className="fas fa-chevron-right" onClick={handleClickNext}></Next>}
+      {num !== 0 && <NavButton id="previous-page" className="fas fa-chevron-left" onClick={handleClickPrevious}></NavButton>}
+      {num !== tabCount - 1 && <NavButton id="next-page" className="fas fa-chevron-right" onClick={handleClickNext}></NavButton>}
 
       {/* Redirect if the asked page is different from the one on screen */}
-      {path !== window.location.pathname && <Redirect to={path} />}
+      {doRedirect && <Redirect to={path} />}
 
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
-          <Route exact path="/home">
+          <Route exact path="/">
             <HomeSection />
           </Route>
           <Route exact path="/works">
@@ -90,7 +84,7 @@ function App() {
           <Route exact path="/contact">
             <ContactSection />
           </Route>
-          <Redirect to="/home" />
+          <Redirect to="/" />
         </Switch>
       </AnimatePresence>
 
@@ -104,34 +98,30 @@ function App() {
   );
 }
 
-const Previous = styled.i`
+const NavButton = styled.i`
+  &#previous-page {
+    left: 0;
+  }
+  &#next-page {
+    right: 0;
+  }
   position: fixed;
-  left: 0;
   top: 0;
   bottom: 0;
   z-index: 6;
   display: flex;
   align-items: center;
   padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  :hover {
+    background-color: rgba(0,0,0,0.2);
+  }
   @media screen and (min-width: 480px) {
     padding: 2rem;
     font-size: 2rem;
   }
   `
-const Next = styled.i`
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 6;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  @media screen and (min-width: 480px) {
-    padding: 2rem;
-    font-size: 2rem;
-  }
-`
 
 const StyledFooter = styled.footer`
   position: fixed;

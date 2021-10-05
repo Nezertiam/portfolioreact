@@ -18,6 +18,11 @@ const HomeSection = () => {
         show: { y: 0, transition: { duration: 0.75, ease: "easeOut" } }
     }
 
+    const itemFromRight = {
+        hidden: { x: 300 },
+        show: { x: 0, transition: { duration: 0.75, ease: "easeOut" } }
+    }
+
     return (
         <Home>
             <motion.div
@@ -27,11 +32,14 @@ const HomeSection = () => {
                 className="container"
             >
                 <section>
-                    <motion.p
-                        className="title orange"
-                    >
-                        Portofolio
-                    </motion.p>
+                    <Hide>
+                        <motion.p
+                            className="title orange"
+                            variants={itemFromRight}
+                        >
+                            Portfolio
+                        </motion.p>
+                    </Hide>
                 </section>
                 <section className="name">
                     <Hide>
@@ -47,7 +55,7 @@ const HomeSection = () => {
                             className="orange"
                             variants={item}
                         >
-                            Dévelopeur Fullstack
+                            Fullstack Devloper
                         </motion.p>
                     </Hide>
                 </section>

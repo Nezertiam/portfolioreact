@@ -11,11 +11,11 @@ export default class Pathfinder {
             case 3:
                 return "/contact";
             default:
-                return "/home";
+                return "/";
         }
     }
 
-    static findNumByPath = (path) => {
+    static findNumByPath = (path = window.location.pathname) => {
         switch (path) {
             case "/works":
                 return 1;

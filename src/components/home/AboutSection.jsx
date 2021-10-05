@@ -3,7 +3,9 @@ import Container from "./Container"
 const AboutSection = () => {
     return (
         <Container>
-            About
+            <p>
+
+            </p>
         </Container>
     )
 }
