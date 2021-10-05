@@ -1,17 +1,10 @@
 import styled from "styled-components";
 import Container from "./Container";
 import { motion } from "framer-motion";
+import { containerHome } from "../animations/animations"
 import Hide from "../ux/Hide";
 
 const HomeSection = () => {
-
-    const container = {
-        hidden: { opacity: 1 },
-        show: {
-            opacity: 1,
-            transition: { duration: 0.1, when: "beforeChildren", staggerChildren: 0.25 }
-        },
-    }
 
     const item = {
         hidden: { y: 200 },
@@ -26,7 +19,7 @@ const HomeSection = () => {
     return (
         <Home>
             <motion.div
-                variants={container}
+                variants={containerHome}
                 initial="hidden"
                 animate="show"
                 className="container"
@@ -55,7 +48,7 @@ const HomeSection = () => {
                             className="orange"
                             variants={item}
                         >
-                            Fullstack Devloper
+                            Fullstack Developer
                         </motion.p>
                     </Hide>
                 </section>
