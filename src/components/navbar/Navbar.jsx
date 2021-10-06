@@ -15,7 +15,7 @@ const Navbar = () => {
         <>
             <Header>
                 <StyledNav>
-                    <Link to="/home" className="link-to-home">Mawyn Nhek</Link>
+                    <Link to="/home" className="link-to-home"><h1>Mawyn Nhek</h1></Link>
                     <Burger open={open} onClick={handleClick} />
                 </StyledNav>
             </Header>
@@ -49,8 +49,11 @@ const Navbar = () => {
 
 const Header = styled.header`
     .link-to-home {
-        letter-spacing: 0.2rem;
-        font-weight: 600;
+        h1 {
+            letter-spacing: 0.2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
     }
 `
 

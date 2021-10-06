@@ -1,52 +1,64 @@
-import { motion } from "framer-motion"
 import styled from "styled-components"
-import { container, fadeIn, scrollReveal, slideFromBottom } from "../animations/animations"
-import { useScroll } from "../services/useScroll"
+import AnimationContainer from "../ux/AnimationContainer"
+import FadeIn from "../ux/FadeIn"
 import Hide from "../ux/Hide"
+import ScrollReveal from "../ux/ScrollReveal"
+import SlideFromBottom from "../ux/SlideFromBottom"
 import WordCarousel from "../wordCarousel/WordCarousel"
 import Container from "./Container"
 
 const ContactSection = () => {
-    const [element, controls] = useScroll();
     return (
         <Contact>
-            <motion.div
-                variants={container}
-                initial="hidden"
-                animate="show"
-                className="container"
-            >
-                <div className="hero">
+            <AnimationContainer className="container">
+                <section className="hero">
                     <div className="hero-container">
-                        <motion.div
-                            className="word-carousel"
-                            variants={fadeIn}
-                        >
+                        <FadeIn className="word-carousel">
                             <WordCarousel />
-                        </motion.div>
+                        </FadeIn>
                         <Hide>
-                            <motion.div
-                                className="scroll-down-container"
-                                variants={slideFromBottom}
-                            >
+                            <SlideFromBottom className="scroll-down-container">
                                 <span className="fas fa-chevron-down" />
                                 <p className="scroll-down-text">Scroll down</p>
                                 <span className="fas fa-chevron-down" />
-                            </motion.div>
+                            </SlideFromBottom>
                         </Hide>
                     </div>
-                </div>
+                </section>
 
-                <motion.div
-                    className="test"
-                    variants={scrollReveal}
-                    initial="hidden"
-                    animate={controls}
-                    ref={element}
-                >
-                    Contact me wesh
-                </motion.div>
-            </motion.div>
+
+                <section className="links">
+                    <h2 className="center">Contact</h2>
+                    <ScrollReveal>
+                        <div className="mail-container">
+                            <h3>Any question?</h3>
+                            <p>
+                                Please feel free to contact me at:
+                                <br />
+                                <button className="mail-button">
+                                    <a href="mailto:mawyn.nhek@gmail.com" className="mail">mawyn.nhek@gmail.com</a>
+                                </button>
+                            </p>
+                        </div>
+                        <FadeIn className="socials-container">
+                            <h3>Socials</h3>
+                            <p>
+                                Don't forget to check my socials!
+                            </p>
+                            <div className="socials">
+                                <FadeIn>
+                                    <a href="https://www.linkedin.com/in/mawyn-nhek-131bb7206/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
+                                </FadeIn>
+                                <FadeIn>
+                                    <a href="https://github.com/Nezertiam" target="_blank" rel="noreferrer"><i className="fab fa-github-square"></i></a>
+                                </FadeIn>
+                            </div>
+                        </FadeIn>
+                    </ScrollReveal>
+                </section>
+
+
+            </AnimationContainer>
         </Contact>
     )
 }
@@ -85,11 +97,51 @@ const Contact = styled(Container)`
                 animation: floatingText 0.75s ease-in-out infinite alternate;
             }
         }
-        
     }
-    .test{
-        background: blue;
-        height: 100vh;
+    .links {
+        padding: 0.75rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            padding-bottom: 3.5rem;
+            text-align: center;
+        }
+        h3 {
+            padding-bottom: 0.75rem;
+            padding-top: 1.5rem;
+        }
+        .mail-container {
+            padding-bottom: 2rem;
+            .mail-button {
+                background: none;
+                border: none;
+                margin: 1rem;
+                margin-top: 1.5rem;
+                .mail {
+                    padding: 1rem;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                    text-align: center;
+                    background-color: var(--primary-dark);
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    border-radius: 50px;
+                }
+            }
+        }
+        .socials-container {
+            .socials {
+                display: flex;
+                justify-content: center;
+                .fab {
+                    font-size: 3rem;
+                    margin: 0.5rem;
+                    margin-top: 1.5rem;
+                }
+            }
+        }
     }
 
     @keyframes floatingText {

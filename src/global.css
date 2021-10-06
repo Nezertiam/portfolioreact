@@ -1,5 +1,6 @@
 :root {
-  --primary: orange;
+  --primary: rgb(255, 166, 0);
+  --primary-dark: rgb(189, 89, 8);
 }
 
 * {

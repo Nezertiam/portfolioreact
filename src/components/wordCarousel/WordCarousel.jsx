@@ -22,6 +22,7 @@ const StyledDiv = styled.div`
     height: 43px;
     overflow: hidden;
     .element {
+        height: 43px;
         color: var(--primary);
         animation: rotate 4s ease-in-out infinite alternate;
     }

@@ -26,7 +26,11 @@ export const fadeIn = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: { duration: 0.75 }
+        transition: {
+            duration: 0.75,
+            when: "beforeChildren",
+            staggerChildren: 0.75
+        }
     },
 }
 
@@ -44,6 +48,8 @@ export const scrollReveal = {
         opacity: 1,
         transition: {
             duration: 0.5,
+            when: "beforeChildren",
+            staggerChildren: 0.25
         },
     },
 };
