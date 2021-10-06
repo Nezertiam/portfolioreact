@@ -114,11 +114,13 @@ const Contact = styled(Container)`
         }
         .mail-container {
             padding-bottom: 2rem;
+            text-align: center;
             .mail-button {
                 background: none;
                 border: none;
                 margin: 1rem;
                 margin-top: 1.5rem;
+                text-align: center;
                 .mail {
                     padding: 1rem;
                     padding-top: 0.5rem;
@@ -132,9 +134,11 @@ const Contact = styled(Container)`
             }
         }
         .socials-container {
+            text-align: center;
             .socials {
                 display: flex;
                 justify-content: center;
+                text-align: center;
                 .fab {
                     font-size: 3rem;
                     margin: 0.5rem;
